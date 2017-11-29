@@ -1,0 +1,16 @@
+[
+  {
+    "line": 2,
+    "name": "Incluir uma nova proposta para um cliente da base",
+    "description": "\r\nPercorrer todo os processo para finalizar o status do cliente\r\nCadastro; Baixa de Pagamento e N�mero de Titulo e da Sorte",
+    "id": "incluir-uma-nova-proposta-para-um-cliente-da-base",
+    "keyword": "Feature",
+    "uri": "C:/Users/jemanuelr/eclipse-workspace/MapfreCap/src/test/java/MapfreCap/teste.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@CadastroSimples"
+      }
+    ]
+  }
+]
