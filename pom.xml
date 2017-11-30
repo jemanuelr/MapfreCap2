@@ -14,7 +14,6 @@
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -44,8 +43,6 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.0</version>
 		</dependency>
-
-
 
 		<dependency>
 			<groupId>junit</groupId>

@@ -1,11 +1,105 @@
 [
   {
     "line": 2,
+    "elements": [
+      {
+        "comments": [
+          {
+            "line": 8,
+            "value": "#@start"
+          },
+          {
+            "line": 9,
+            "value": "#Scenario: Cadastro de Propostos da Simples para clientes da base"
+          },
+          {
+            "line": 10,
+            "value": "#Given que estamos efetuando o login"
+          },
+          {
+            "line": 11,
+            "value": "#When abrimos a tela Ficha de Cadastro"
+          },
+          {
+            "line": 12,
+            "value": "#And seguimos o fluxo para iniciar o cadasstro da nova proposta"
+          },
+          {
+            "line": 13,
+            "value": "#Then cadastramos a proposta"
+          }
+        ],
+        "before": [
+          {
+            "result": {
+              "duration": 3251977086,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ProcIntOperacao.setUp()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Rodar o processo para integra��o  de dados e atualiza��es de tabelas.",
+        "description": "",
+        "id": "incluir-uma-nova-proposta-para-um-cliente-da-base;rodar-o-processo-para-integra��o--de-dados-e-atualiza��es-de-tabelas.",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11208111552,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "que efetuei o cadastro de proposta e devera rodar o processo para o sistma atualizar",
+            "match": {
+              "location": "ProcIntOperacao.Caminho()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 18,
+            "name": "sera roda o processo de  Integra��o Geral - Opera��es",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 19,
+            "name": "dasdasd",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 20,
+            "name": "csadasdsa",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 15,
+            "name": "@Processo"
+          }
+        ]
+      }
+    ],
     "name": "Incluir uma nova proposta para um cliente da base",
-    "description": "\r\nPercorrer todo os processo para finalizar o status do cliente\r\nCadastro; Baixa de Pagamento e N�mero de Titulo e da Sorte",
+    "description": "\r\nPercorrer todo os processo para finalizar o status do cliente\r\nCadastro\r\nBaixa de Pagamento e N�mero de Titulo e da Sorte",
     "id": "incluir-uma-nova-proposta-para-um-cliente-da-base",
     "keyword": "Feature",
-    "uri": "C:/Users/jemanuelr/eclipse-workspace/MapfreCap/src/test/java/MapfreCap/teste.feature",
+    "uri": "src/test/java/MapfreCap/MapfreTeste.feature",
     "tags": [
       {
         "line": 1,
