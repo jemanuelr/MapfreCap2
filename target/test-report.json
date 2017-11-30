@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 4031011780,
+              "duration": 3209072171,
               "status": "passed"
             },
             "match": {
@@ -23,7 +23,7 @@
         "steps": [
           {
             "result": {
-              "duration": 83560287570,
+              "duration": 78938090360,
               "status": "passed"
             },
             "line": 10,
@@ -65,6 +65,72 @@
           {
             "line": 8,
             "name": "@start"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2397546795,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ProcIntOperacao.setUp()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Rodar o processo para integra��o  de dados e atualiza��es de tabelas.",
+        "description": "",
+        "id": "incluir-uma-nova-proposta-para-um-cliente-da-base;rodar-o-processo-para-integra��o--de-dados-e-atualiza��es-de-tabelas.",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 22446197635,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "que efetuei o cadastro de proposta e devera rodar o processo para o sistma atualizar",
+            "match": {
+              "location": "ProcIntOperacao.Caminho()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 18,
+            "name": "sera roda o processo de  Integra��o Geral - Opera��es",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 19,
+            "name": "dasdasd",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 20,
+            "name": "csadasdsa",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 15,
+            "name": "@Processo"
           }
         ]
       }

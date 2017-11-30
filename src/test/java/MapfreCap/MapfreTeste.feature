@@ -11,10 +11,10 @@ Feature: Incluir uma nova proposta para um cliente da base
     When abrimos a tela Ficha de Cadastro
     And seguimos o fluxo para iniciar o cadasstro da nova proposta
     Then cadastramos a proposta
-#
-  #@Processo
-  #Scenario: Rodar o processo para integração  de dados e atualizações de tabelas.
-    #Given que efetuei o cadastro de proposta e devera rodar o processo para o sistma atualizar
-    #When sera roda o processo de  Integração Geral - Operações
-    #And dasdasd
-    #Then csadasdsa
+
+  @Processo
+  Scenario: Rodar o processo para integração  de dados e atualizações de tabelas.
+    Given que efetuei o cadastro de proposta e devera rodar o processo para o sistma atualizar
+    When sera roda o processo de  Integração Geral - Operações
+    And dasdasd
+    Then csadasdsa

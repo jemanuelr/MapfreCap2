@@ -149,8 +149,9 @@ public class MapfreCapSteps {
 		driver.findElement(By.id("btnFinish")).click();
 
 		// //Espera o campo Situação esta como "PENDENTE"
-		WebDriverWait wait = new WebDriverWait(driver, 20);// corrigir
+		WebDriverWait wait = new WebDriverWait(driver, 40);
 		wait.until(ExpectedConditions.textToBePresentInElementValue(By.id("ddlSituacaoProposta"), "PE"));
+
 		// // Printa a tela após Gravar
 		BufferedImage EfetivarVenda = robot
 				.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
