@@ -3,59 +3,33 @@
     "line": 2,
     "elements": [
       {
-        "comments": [
-          {
-            "line": 8,
-            "value": "#@start"
-          },
-          {
-            "line": 9,
-            "value": "#Scenario: Cadastro de Propostos da Simples para clientes da base"
-          },
-          {
-            "line": 10,
-            "value": "#Given que estamos efetuando o login"
-          },
-          {
-            "line": 11,
-            "value": "#When abrimos a tela Ficha de Cadastro"
-          },
-          {
-            "line": 12,
-            "value": "#And seguimos o fluxo para iniciar o cadasstro da nova proposta"
-          },
-          {
-            "line": 13,
-            "value": "#Then cadastramos a proposta"
-          }
-        ],
         "before": [
           {
             "result": {
-              "duration": 3251977086,
+              "duration": 4031011780,
               "status": "passed"
             },
             "match": {
-              "location": "ProcIntOperacao.setUp()"
+              "location": "MapfreCapSteps.setUp()"
             }
           }
         ],
-        "line": 16,
-        "name": "Rodar o processo para integra��o  de dados e atualiza��es de tabelas.",
+        "line": 9,
+        "name": "Cadastro de Propostos da Simples para clientes da base",
         "description": "",
-        "id": "incluir-uma-nova-proposta-para-um-cliente-da-base;rodar-o-processo-para-integra��o--de-dados-e-atualiza��es-de-tabelas.",
+        "id": "incluir-uma-nova-proposta-para-um-cliente-da-base;cadastro-de-propostos-da-simples-para-clientes-da-base",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 11208111552,
+              "duration": 83560287570,
               "status": "passed"
             },
-            "line": 17,
-            "name": "que efetuei o cadastro de proposta e devera rodar o processo para o sistma atualizar",
+            "line": 10,
+            "name": "que estamos efetuando o login",
             "match": {
-              "location": "ProcIntOperacao.Caminho()"
+              "location": "MapfreCapSteps.Loga()"
             },
             "keyword": "Given "
           },
@@ -63,8 +37,8 @@
             "result": {
               "status": "undefined"
             },
-            "line": 18,
-            "name": "sera roda o processo de  Integra��o Geral - Opera��es",
+            "line": 11,
+            "name": "abrimos a tela Ficha de Cadastro",
             "match": {},
             "keyword": "When "
           },
@@ -72,8 +46,8 @@
             "result": {
               "status": "undefined"
             },
-            "line": 19,
-            "name": "dasdasd",
+            "line": 12,
+            "name": "seguimos o fluxo para iniciar o cadasstro da nova proposta",
             "match": {},
             "keyword": "And "
           },
@@ -81,16 +55,16 @@
             "result": {
               "status": "undefined"
             },
-            "line": 20,
-            "name": "csadasdsa",
+            "line": 13,
+            "name": "cadastramos a proposta",
             "match": {},
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 15,
-            "name": "@Processo"
+            "line": 8,
+            "name": "@start"
           }
         ]
       }
