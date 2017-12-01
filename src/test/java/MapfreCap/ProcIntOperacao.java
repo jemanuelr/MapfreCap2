@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -41,50 +42,55 @@ public class ProcIntOperacao {
 	}
 
 	@Given("^que efetuei o cadastro de proposta e devera rodar o processo para o sistma atualizar$")
-	public void Caminho() throws InterruptedException, AWTException, IOException {
-		Robot robot = new Robot();
-		driver.get("http://10.206.28.128/mapfrecap/tkgs_acesso/asp/framelogin.asp?usu=0001&prf=01"); // SUS
+	public void Caminho() throws InterruptedException, AWTException, IOException, NoSuchElementException {
+		try {
+			Robot robot = new Robot();
 
-		Thread.sleep(1000);
-		// Direciona para pagina "Gerenciador de Processos"
-		driver.get(
-				"http://10.206.28.128/mapfrecap//processes/frmProcess.aspx?endereco=../../../processes/frmProcess.aspx&usu=0001&titulo=Gerenciador de processos&parametro=&prf=01&mnusel=2805&&");
-		System.out.println(driver.getTitle());
+			driver.get("http://10.206.28.128/mapfrecap/tkgs_acesso/asp/framelogin.asp?usu=0001&prf=01"); // SUS
 
-		Thread.sleep(500);
-		// Clina no botão "Iniciar novo Processo"
-		driver.findElement(By.id("btnExecutar")).click();
+			Thread.sleep(1000);
+			// Direciona para pagina "Gerenciador de Processos"
+			driver.get(
+					"http://10.206.28.128/mapfrecap//processes/frmProcess.aspx?endereco=../../../processes/frmProcess.aspx&usu=0001&titulo=Gerenciador de processos&parametro=&prf=01&mnusel=2805&&");
+			System.out.println(driver.getTitle());
 
-		Thread.sleep(1000);
-		// Seleciona o processo " Integração Geral - Operações"
-		driver.findElement(
-				By.xpath("//tbody//*[@id='divStartProcessTree']//*[text()='Integração Geral – Operações']")).click();
+			Thread.sleep(500);
+			// Clina no botão "Iniciar novo Processo"
+			driver.findElement(By.id("btnExecutar")).click();
 
-		// Clica no botão Concluir
-		driver.findElement(By.id("btnConcluir")).click();
+			Thread.sleep(1000);
+			// Seleciona o processo " Integração Geral - Operações"
+			driver.findElement(
+					By.xpath("//tbody//*[@id='divStartProcessTree']//*[text()='Integração Geral – Operações']"))
+					.click();
 
-		// Espera finalizar processo
+			// Clica no botão Concluir
+			driver.findElement(By.id("btnConcluir")).click();
 
-		// WebDriverWait wait = new WebDriverWait(processo, 20);// corrigir
-		// wait.until(ExpectedConditions.textToBePresentInElementValue(By.xpath("//
-		// fieldset//*[@id='msgRunning']"),
-		// "Não existem processos em execução."));
+			// Espera finalizar processo
 
-		// Printa tela
-		BufferedImage GerenProcesso = robot
-				.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-		ImageIO.write(GerenProcesso, "JPEG", new File("ScreenShot/Gerenciado_de_Processo/GerenProcesso.jpg"));
+			// WebDriverWait wait = new WebDriverWait(processo, 20);// corrigir
+			// wait.until(ExpectedConditions.textToBePresentInElementValue(By.xpath("//
+			// fieldset//*[@id='msgRunning']"),
+			// "Não existem processos em execução."));
 
-		
-//		WebDriverWait wait = new WebDriverWait(driver, 40);
-//		wait.until(ExpectedConditions.textToBePresentInElement(By.id("msgRunning"), "PE"));
-//
-//		
-		
-		
-		
-		Thread.sleep(5000);
-		JOptionPane.showMessageDialog(null, "Teste Concluido!");
-		driver.quit();
+			// Printa tela
+			BufferedImage GerenProcesso = robot
+					.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+			ImageIO.write(GerenProcesso, "JPEG", new File("ScreenShot/Gerenciado_de_Processo/GerenProcesso.jpg"));
+
+			// WebDriverWait wait = new WebDriverWait(driver, 40);
+			// wait.until(ExpectedConditions.textToBePresentInElement(By.id("msgRunning"),
+			// "PE"));
+			//
+			//
+
+			Thread.sleep(5000);
+			JOptionPane.showMessageDialog(null, "Teste Concluido!");
+			driver.quit();
+		} catch (NoSuchElementException e) {
+			JOptionPane.showMessageDialog(null, "Falha no Servidor");
+			driver.quit();
+		}
 	}
 }

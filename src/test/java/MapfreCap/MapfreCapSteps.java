@@ -41,7 +41,7 @@ public class MapfreCapSteps {
 		// Abre a pagina da Mapfre
 		driver.get("http://10.206.28.128/mapfrecap/"); // SUS
 		System.out.println(driver.getTitle());
-		
+		//driver.quit();
 
 	}
 

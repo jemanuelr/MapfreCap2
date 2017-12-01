@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -49,7 +50,6 @@ public class PagamentoSteps {
 	@Given("^que o gerenciador de processo foi rodado e estamos na pagina da baixa de Pagamento$")
 	public void IncluirBanco() throws InterruptedException {
 
-		
 		// Clica na lupa de pesquisa
 		driver.findElement(By.id("btnAgenteCobrador")).click();
 		// Clica no botão "NOVO"
@@ -57,28 +57,33 @@ public class PagamentoSteps {
 		// Clica na "LUPA"
 		driver.findElement(By.id("btnAgenteCobrador")).click();
 
-		
-//		WebDriverWait wait = new WebDriverWait(driver, 40);
-//		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("btnAgenteCobrador"));	
-//		
-//		// Clica no campo "ITEM"
-//		driver.findElement(By.id("cboItem")).click();
-		
-		
-		
-		Thread.sleep(500);
-		driver.findElement(By.xpath("//tbody//[@='cboItem']//*[text()='Código']")).click();
-		
-		
-		
-		
-		
-		
-		
-		
 		Thread.sleep(1000);
 		JOptionPane.showMessageDialog(null, "Teste Concluido!");
 		driver.quit();
+
+		// Altera o foco para tela de "CONSULTA"
+		/*
+		 * driver.switchTo().frame("//body/div/div");
+		 * 
+		 * // Clica no campo "ITEM" driver.findElement(By.id("cboItem")).click();
+		 * 
+		 * // Dimension total_frames =
+		 * driver.findElement(By.xpath("//body/div/div")).getSize();
+		 * 
+		 * Thread.sleep(500);
+		 * driver.findElement(By.xpath("//tbody//[@='cboItem']//*[text()='Código']")).
+		 * click();
+		 * 
+		 * driver.findElement(By.id("cboCriterio")).click();
+		 * 
+		 * driver.findElement(By.id("txtSelecao")).click();
+		 * 
+		 * driver.findElement(By.id("btnPesquisar")).click();
+		 * 
+		 * // driver.switchTo.frame("Frame_ID");
+		 */
+
 	}
 
 }
+//NoSuchElementException

@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 6811247364,
+              "duration": 3364661650,
               "status": "passed"
             },
             "match": {
@@ -23,7 +23,7 @@
         "steps": [
           {
             "result": {
-              "duration": 115351186845,
+              "duration": 76833840959,
               "status": "passed"
             },
             "line": 10,
@@ -72,7 +72,7 @@
         "before": [
           {
             "result": {
-              "duration": 3706010260,
+              "duration": 2424316432,
               "status": "passed"
             },
             "match": {
@@ -89,9 +89,8 @@
         "steps": [
           {
             "result": {
-              "duration": 10321701901,
-              "error_message": "org.openqa.selenium.NoSuchElementException: Unable to find element with xpath \u003d\u003d //tbody//*[@id\u003d\u0027divStartProcessTree\u0027]//*[text()\u003d\u0027Integração Geral – Operações\u0027]\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027JEMANUELRW701\u0027, ip: \u0027172.20.148.208\u0027, os.name: \u0027Windows 7\u0027, os.arch: \u0027amd64\u0027, os.version: \u00276.1\u0027, java.version: \u00271.8.0_151\u0027\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:6622/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}\nSession ID: d6334945-e5e1-4a02-bc05-9b4eda72ee89\n*** Element info: {Using\u003dxpath, value\u003d//tbody//*[@id\u003d\u0027divStartProcessTree\u0027]//*[text()\u003d\u0027Integração Geral – Operações\u0027]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:472)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)\r\n\tat MapfreCap.ProcIntOperacao.Caminho(ProcIntOperacao.java:60)\r\n\tat ✽.Given que efetuei o cadastro de proposta e devera rodar o processo para o sistma atualizar(src/test/java/MapfreCap/MapfreTeste.feature:17)\r\n",
-              "status": "failed"
+              "duration": 13387810823,
+              "status": "passed"
             },
             "line": 17,
             "name": "que efetuei o cadastro de proposta e devera rodar o processo para o sistma atualizar",
@@ -139,7 +138,7 @@
         "before": [
           {
             "result": {
-              "duration": 5820478364,
+              "duration": 5320830219,
               "status": "passed"
             },
             "match": {
@@ -156,9 +155,8 @@
         "steps": [
           {
             "result": {
-              "duration": 4529623326,
-              "error_message": "org.openqa.selenium.InvalidSelectorException: Unable to locate an element with the xpath expression //tbody//[@\u003d\u0027cboItem\u0027]//*[text()\u003d\u0027Código\u0027] because of the following error:\n[object Error]\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027JEMANUELRW701\u0027, ip: \u0027172.20.148.208\u0027, os.name: \u0027Windows 7\u0027, os.arch: \u0027amd64\u0027, os.version: \u00276.1\u0027, java.version: \u00271.8.0_151\u0027\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:21113/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}\nSession ID: 18cb768a-2f77-4150-ba9c-ec14c8925a63\n*** Element info: {Using\u003dxpath, value\u003d//tbody//[@\u003d\u0027cboItem\u0027]//*[text()\u003d\u0027Código\u0027]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:472)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)\r\n\tat MapfreCap.PagamentoSteps.IncluirBanco(PagamentoSteps.java:70)\r\n\tat ✽.Given que o gerenciador de processo foi rodado e estamos na pagina da baixa de Pagamento(src/test/java/MapfreCap/MapfreTeste.feature:24)\r\n",
-              "status": "failed"
+              "duration": 7693723241,
+              "status": "passed"
             },
             "line": 24,
             "name": "que o gerenciador de processo foi rodado e estamos na pagina da baixa de Pagamento",
