@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -40,6 +41,7 @@ public class MapfreCapSteps {
 		// Abre a pagina da Mapfre
 		driver.get("http://10.206.28.128/mapfrecap/"); // SUS
 		System.out.println(driver.getTitle());
+		
 
 	}
 

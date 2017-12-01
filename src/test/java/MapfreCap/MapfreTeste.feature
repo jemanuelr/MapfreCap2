@@ -18,3 +18,7 @@ Feature: Incluir uma nova proposta para um cliente da base
     When sera roda o processo de  Integração Geral - Operações
     And dasdasd
     Then csadasdsa
+
+  @Pagamento
+  Scenario: Pagamento manual
+    Given que o gerenciador de processo foi rodado e estamos na pagina da baixa de Pagamento
