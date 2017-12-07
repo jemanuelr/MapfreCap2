@@ -19,6 +19,6 @@ Feature: Incluir uma nova proposta para um cliente da base
     And Validamos e Printamos
     Then Clicamos no log e printamos
   
-  #@Pagamento
-  #Scenario: Pagamento manual
-    #Given que o gerenciador de processo foi rodado e estamos na pagina da baixa de Pagamento
+  @Pagamento
+  Scenario: Pagamento manual
+    Given que o gerenciador de processo foi rodado e estamos na pagina da baixa de Pagamento

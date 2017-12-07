@@ -51,25 +51,41 @@ public class Cadastro {
 		}
 		// Retorna o titulo da Pagina
 		System.out.println(driver.getTitle());
-		// driver.quit();
+		//driver.quit();
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 	}
 
 	@Given("^que estamos efetuando o login e abrimos a tela de Cadastro$")
-	public void Loga() throws InterruptedException {
+	public void Loga() {
+		String loginDev = "adm";
+		String senhaDev = "mcap007";
+
+		String loginSus = "adm";
+		String senhaSus = "mapfre2016";
+
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		try {
 			// Abre o Ambiente DEVR2
 			if (ambiente.equals("DEVR2")) {
-				// Adiciona uma valoriavel JavaScript
-				JavascriptExecutor jsDev = (JavascriptExecutor) driver;
+
 				// Escreve o login
-				jsDev.executeScript("document.getElementById('txtLogin_I').setAttribute('value', 'adm')");
+				js.executeScript("document.getElementById('txtLogin_I').setAttribute('value', 'adm')");
+
+				// Espera o campo LOGIN estar Preenchido
+				wait.until(ExpectedConditions.textToBePresentInElementValue(By.name("txtLogin"), loginDev));
+
 				// Escreve a senha
-				jsDev.executeScript("document.getElementById('txtSenha_I').setAttribute('value', 'mcap007')");
+				js.executeScript("document.getElementById('txtSenha_I').setAttribute('value', 'mcap007')");
+
+				// Espera o campo SENHA estar Preenchido
+				wait.until(ExpectedConditions.textToBePresentInElementValue(By.name("txtSenha"), senhaDev));
+
 				// Clica no Botão Entrar
-				Thread.sleep(1000);
 				driver.findElement(By.name("btnEntrar")).click();
+
 				// Abre a tela "FICHA DE CADASTRO"
 				driver.get(
 						"http://172.20.152.47/mapfrecap//Coreon.Propostas/frmPropostas.aspx?endereco=../../../Coreon.Propostas/frmPropostas.aspx&usu=0001&titulo=Propostas&parametro=&prf=01&mnusel=1600&&");
@@ -78,17 +94,26 @@ public class Cadastro {
 
 				// Abre o ambiente SUS
 			} else if (ambiente.equals("SUS")) {
-				// Adiciona uma valoriavel JavaScript
-				JavascriptExecutor jsSus = (JavascriptExecutor) driver;
+
 				// Escreve o login
-				jsSus.executeScript("document.getElementById('txtLogin_I').setAttribute('value', 'adm')");
+				js.executeScript("document.getElementById('txtLogin_I').setAttribute('value', 'adm')");
+
+				// Espera o campo LOGIN estar Preenchido
+				wait.until(ExpectedConditions.textToBePresentInElementValue(By.name("txtLogin"), loginSus));
+
 				// Escreve a senha
-				jsSus.executeScript("document.getElementById('txtSenha_I').setAttribute('value', 'mcap007')");
+				js.executeScript("document.getElementById('txtSenha_I').setAttribute('value', 'mapfre2016')");
+
+				// Espera o campo SENHA estar Preenchido
+				wait.until(ExpectedConditions.textToBePresentInElementValue(By.name("txtSenha"), senhaSus));
+
 				// Clica no Botão Entrar
-				driver.findElement(By.name("btnEntrar")).click();
+				driver.findElement(By.name("btn Entrar")).click();
+
 				// Abre a tela "FICHA DE CADASTRO"
 				driver.get(
 						"http://10.206.28.128/mapfrecap//Coreon.Propostas/frmPropostas.aspx?endereco=../../../Coreon.Propostas/frmPropostas.aspx&usu=0001&titulo=Propostas&parametro=&prf=01&mnusel=1600&&");
+
 				// Retorna o Titulo da Pagina
 				System.out.println(driver.getTitle());
 			}
@@ -103,24 +128,27 @@ public class Cadastro {
 		String nomeCanalVenda = "TRADICIONAL - III";
 		String nomeProduto = "GARANTIA FIADOR";
 
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+
 		// Tempo padrtão de espera
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
 		// Pega o campo Canal de Venda
 		WebElement elementCanalVenda = driver.findElement(By.name("ddlCanalVenda"));
 		// Seleciona o campo Canal de Venda
 		Select comboVenda = new Select(elementCanalVenda);
 		// Seleciona o Canal de Venda (Tradicional - III)
 		comboVenda.selectByVisibleText(nomeCanalVenda);
-		// Verifica se o campo foi selecionado
 
-		Thread.sleep(1000);
+		// Espera o campo CANAL DE VENDA ser preenchido com Tradicional III
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.name("ddlCanalVenda"), nomeCanalVenda));
+
 		// Pega o campo Produto
 		WebElement elementProduto = driver.findElement(By.id("ddlProduto"));
 		// Seleciona o campo Produto
 		Select comboProduto = new Select(elementProduto);
 		// Seleciona o Produto (Garantia Fiador)
 		comboProduto.selectByVisibleText(nomeProduto);
-		// Verifica se a opção foi selecionada
 
 		// desabilita o tempo padrão
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
@@ -129,63 +157,77 @@ public class Cadastro {
 	@And("^informamos os dados do Cliente na Base$")
 	public void Subscritor() throws InterruptedException {
 		String nomeCliente = "MARIA DA GLORIA";
-		String valor = "10000";
+		String nomeProduto = "GARANTIA FIADOR";
+		String valorMensalidade = "10000";
 		String quantidadeTitulo = "2";
 		String valorFormaPagamento = "3";
 
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
-		Thread.sleep(500);
+		// Espera o campo PRODUTO ser preenchido com Garantia Fiador
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.name("ddlProduto"), nomeProduto));
+
 		// clica no botão "SELECIONAR"
 		WebElement selecionarSubscritor = driver.findElement(By.name("selecaoSubscritor$btnSelecionar"));
 		selecionarSubscritor.click();
 
+		// Clica no campo SELEÇÃO
 		WebElement selecaoCliente = driver.findElement(By.name("selecaoSubscritor$Pesquisa$txtSelecao"));
 		selecaoCliente.click();
 
 		Thread.sleep(500);
 		// Escreve o nome do cliesnte
-		JavascriptExecutor nomePesquisaPessoa = (JavascriptExecutor) driver;
-		nomePesquisaPessoa.executeScript("$('#selecaoSubscritor_Pesquisa_txtSelecao').val('" + nomeCliente + "')");
+		js.executeScript("$('#selecaoSubscritor_Pesquisa_txtSelecao').val('" + nomeCliente + "')");
+
+		// Espera o campo SELEÇÂO ser preenchido com o nome do cliente
+		wait.until(ExpectedConditions.textToBePresentInElementValue(By.name("selecaoSubscritor$Pesquisa$txtSelecao"),
+				nomeCliente));
 
 		// Clica no botão "CONSULTAR"
 		WebElement consultarPesquisaPessoa = driver.findElement(By.name("selecaoSubscritor$Pesquisa$btnConsultar"));
 		consultarPesquisaPessoa.click();
 
+		Thread.sleep(200);
 		// Seleciona o cliente procurado
 		WebElement clienteLinkPesquisaPessoa = driver.findElement(By.linkText(nomeCliente));
 		clienteLinkPesquisaPessoa.click();
 
-		// Seleciona a forma de pagamento
+		// Espera o campo NOME ser selecionado com o cliente
+		wait.until(ExpectedConditions.textToBePresentInElementValue(By.name("selecaoSubscritor$edtNome"), nomeCliente));
 
+		// captura o campo FORMA DE PAGAMENTO
 		WebElement formaPagamentoSubscritor = driver.findElement(By.name("selecaoSubscritor$ddlFormaPagamento"));
 		// Seleciona o campo FORMA DE PAGAMENTO
 		Select comboFormaPagamento = new Select(formaPagamentoSubscritor);
 		// Seleciona "BOLETO BANCARIO"
 		comboFormaPagamento.selectByValue(valorFormaPagamento);
 
+		// Esperar a forma de pagamento ser informada
+		wait.until(ExpectedConditions.textToBePresentInElementValue(By.name("selecaoSubscritor$ddlFormaPagamento"),
+				valorFormaPagamento));
+
 		// Clica no botão NOVO
 		WebElement novoTitulares = driver.findElement(By.id("btnHabilitaPnl"));
 		novoTitulares.click();
 
+		Thread.sleep(100);
 		// Copia do Subscritor
 		WebElement copiarSubscritor = driver.findElement(By.id("btnCopySubscritor"));
 		copiarSubscritor.click();
 
-		// Clica no campo Valor Mensalidade
-		JavascriptExecutor valorMensalidade = (JavascriptExecutor) driver;
-		// Informa o VALOR
-		valorMensalidade
-				.executeScript("document.getElementById('edtVal_msd_ttr').setAttribute('value', " + valor + ")");
-
-		WebDriverWait wait = new WebDriverWait(driver, 40);
+		// Espera o campo NOME estar Preenchido
 		wait.until(ExpectedConditions.textToBePresentInElementValue(By.name("selecaoSubscritor$edtNome"), nomeCliente));
 
-		// Clica no campo QUANTIDADE TITULOS
-		JavascriptExecutor quantTitulo = (JavascriptExecutor) driver;
+		// Informa o VALOR
+		js.executeScript("document.getElementById('edtVal_msd_ttr').setAttribute('value', " + valorMensalidade + ")");
+
+		// Espera o campo VALOR MENSALIDADE ser preenchido
+		wait.until(ExpectedConditions.textToBePresentInElementValue(By.name("edtVal_msd_ttr"), valorMensalidade));
+
 		// Informa a quantidade de Titulos
-		quantTitulo.executeScript(
-				"document.getElementById('txtqtd_tit_ttr').setAttribute('value', " + quantidadeTitulo + ")");
+		js.executeScript("document.getElementById('txtqtd_tit_ttr').setAttribute('value', " + quantidadeTitulo + ")");
 
 		// Clica no botão "Confirma"
 		WebElement confirmarTitularSelec = driver.findElement(By.name("btnConfirmarTitular"));
@@ -196,30 +238,40 @@ public class Cadastro {
 
 	@Then("^Gravamos e efetivamos$")
 	public void efetivar() throws AWTException, InterruptedException, IOException {
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+
+		String nomeCliente = "MARIA DA GLORIA";
+
 		Robot robot = new Robot();
-		Thread.sleep(500);
+		BufferedImage sc = robot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+		//
+		// // Espera o cliente ser "cadastrado"
+		// wait.until(ExpectedConditions.textToBePresentInElementLocated(By.name("grdTitulares_ctl02_hdnNomPessGrid"),
+		// nomeCliente));
+		//
+		Thread.sleep(1000);
 		// Clica no botão "GRAVAR"
 		WebElement gravarCadastro = driver.findElement(By.name("btnGravar"));
 		gravarCadastro.click();
 
 		// Printa a tela após Gravar
-		BufferedImage Gravar = robot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-		ImageIO.write(Gravar, "png", new File("ScreenShot/Cadastro/Gravar.png"));
+		ImageIO.write(sc, "png", new File("ScreenShot/Cadastro/Gravar.png"));
 
+		Thread.sleep(1000);
 		// Clica no botão Efetivar Venda
 		WebElement efetivarVendaCadastro = driver.findElement(By.name("btnFinish"));
 		efetivarVendaCadastro.click();
 
 		// //Espera o campo Situação esta como "PENDENTE"
-		WebDriverWait wait = new WebDriverWait(driver, 40);
-		wait.until(ExpectedConditions.textToBePresentInElementValue(By.id("ddlSituacaoProposta"), "PE"));
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("ddlSituacaoProposta"), "PE"));
 
 		// // Printa a tela após Efetivar Venda
-		BufferedImage EfetivarVenda = robot
-				.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-		ImageIO.write(EfetivarVenda, "png", new File("ScreenShot/Cadastro/EfetivarVenda.png"));
+		ImageIO.write(sc, "png", new File("ScreenShot/Cadastro/EfetivarVenda.png"));
 
+		Thread.sleep(500);
 		// Apresenta mensagem de teste Finalizado
 		JOptionPane.showMessageDialog(null, "Teste Concluido!");
 
